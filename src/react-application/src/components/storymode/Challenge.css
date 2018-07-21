@@ -1,0 +1,37 @@
+/* Used: http://csshexagon.com/ to create hexagon */
+
+.hax{
+  display: flex;
+  height: 100%;
+  flex-wrap:wrap;
+}
+
+.content-container__inner{
+  position:relative;
+  display:inline-block;
+}
+
+.buttongroup{
+  width: 100%;
+}
+
+.buttongroup .button {
+  border: none;
+  background-color: #64C7CC;
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.buttongroup .button:hover{opacity: 1}

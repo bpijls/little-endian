@@ -1,0 +1,74 @@
+install python
+
+pip install esptool
+
+http://www.espruino.com/files/espruino_1v96.zip download this
+
+cd C:\PATH TO THE FOLDER->\espruino_1v96_esp8266_4mb
+Change COM3 to your USB port
+esptool.py --port COM3 --baud 115200 write_flash --flash_freq 80m --flash_mode dio --flash_size 32m 0x0000 "boot_v1.6.bin" 0x1000 espruino_esp8266_user1.bin 0x3FC000 esp_init_data_default.bin 0x3FE000 blank.bin
+
+esptool.py --port COM5 --baud 115200 write_flash --flash_freq 80m --flash_mode qio --flash_size 32m 0x0000 "boot_v1.6.bin" 0x1000 espruino_esp8266_user1.bin 0x3FC000 esp_init_data_default.bin 0x37E000 blank.bin
+
+For the nodemcu:
+esptool.py --port COM6 --baud 115200 write_flash --flash_freq 80m --flash_mode qio --flash_size 4MB-c1 0x0000 "boot_v1.6.bin" 0x1000 espruino_esp8266_user1.bin 0x3FC000  esp_init_data_default.bin 0x3FE000 blank.bin
+
+
+erase flash:
+esptool.py --port COM3 erase_flash
+
+
+"Unable to retrieve board information. Connection Error?" fix -----> CHANGED 'qio' TO 'dio'
+
+/*
+Wemos d1 mini
+https://wiki.wemos.cc/products:d1:d1_mini
+Board = code
+D0 = D16
+D2 = D4
+D1 = D5
+D3 = D0
+D4 = D2 //Also the onboard LED
+D5 = D14
+D6 = D12
+D7 = D13
+D8 = D15
+A0 = A0
+*/
+
+/*
+Nodemcu v2
+https://makershop.ma/wp-content/uploads/2017/08/nodemcu_pins.png
+Board = Code
+D0 = D16
+D1 = D5
+D2 = D4
+D3 = D0
+D4 = D2 (onboard LED)
+D5 = D14
+D6 = D12
+D7 = D13
+D8 = D15
+A0 = A0
+NEW PINS:
+RX = D3
+TX = D1
+SD2 = D9
+SD3 = D10
+*/
+
+Can send code to the webIDE by using
+http://www.espruino.com/webide?code="INSERT CODE HERE"
+
+
+Install Espruino
+https://auth0.com/blog/javascript-for-microcontrollers-and-iot-part-4/
+
+Simple blinking LED
+http://crufti.com/getting-started-with-espruino-on-esp8266/
+
+Info about espruino + esp8266
+http://www.espruino.com/EspruinoESP8266
+
+blockly etc
+https://github.com/espruino/EspruinoWebIDE

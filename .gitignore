@@ -1,0 +1,7 @@
+.env
+coderdojo-webapp/.idea/workspace.xml
+coderdojo-webapp/.idea/coderdojo-webapp.iml
+coderdojo-webapp/.idea/misc.xml
+coderdojo-webapp/.idea/modules.xml
+
+*.log

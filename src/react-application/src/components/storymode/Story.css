@@ -1,0 +1,10 @@
+.hax{
+  display: flex;
+  height: 100%;
+  flex-wrap:wrap;
+}
+
+.bg-white {
+  background-color: rgba(255,255,255,1);
+  opacity: 1;
+}

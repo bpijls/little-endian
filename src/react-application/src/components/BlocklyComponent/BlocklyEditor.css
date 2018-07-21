@@ -1,0 +1,76 @@
+#blockly-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    left: 0;
+    top: 0;
+}
+
+/* #blockly-container > div:first-child > div{
+  left: 0 !important;
+  top: 0 !important;
+  position: static !important;
+  width: 100% !important;
+} */
+
+.blocklyDrawer {
+    height: 100%;
+}
+
+.blocklyWorkspace {
+    background: none;
+    background-color: none;
+    width: 100%;
+}
+
+.blocklyMainBackground {
+    left: 0;
+    top: 0;
+    /* position: absolute; */
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    opacity: 0.9;
+    background-color: rgba(32, 30, 30, 0.9);
+    background: none;
+    fill: none;
+}
+
+.blocklyToolboxDiv {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 10px;
+}
+
+.injectionDiv {
+    border-radius: 0px 0px 10px 10px;
+    background-color: none;
+}
+
+#btn-container {
+    left: 120px;
+    bottom: 20px;
+    position: absolute;
+    width: auto;
+    height: 50px;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+
+.btn-blockly-editor {
+    float: left;
+    border-radius: 25px;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255,255,255,0.9);
+    box-shadow: 0px 0px 10px 0.5px #888888;
+    text-align: center;
+    line-height: 50px;
+    vertical-align: middle;
+    font-size: 2.2em;
+    color: rgba(63,52,100,1);
+}
+
+.blockly-buttons:hover {
+    background-color: #ff7675;
+}

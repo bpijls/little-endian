@@ -1,0 +1,49 @@
+<!-- Toolbar -->
+<xml id="toolbox" style="display: none">
+
+    <category name="Logica" colour="#5ba55b">
+        <block type="logic_loop"></block>
+    </category>
+
+    <category name="Logic" colour="#5ba55b">
+        <block type="logic_compare"></block>
+        <block type="logic_operation"></block>
+        <block type="logic_boolean"></block>
+    </category>
+
+    <category name="Tekst" colour="#5ba580">
+        <block type="text"></block>
+    </category>
+
+    <category name="Control" colour="#5ba580">
+        <block type="controls_if"></block>
+        <block type="controls_whileUntil"></block>
+        <block type="controls_for"></block>
+        <block type="controls_repeat_ext"></block>
+
+    </category>
+
+    <category name="Math" colour="#5ba580">
+        <block type="math_number"></block>
+    </category>
+
+    <sep><!-- seperator in between categories --></sep>
+
+    <category name="Robot" colour="270">
+        <block type="robot_movement"></block>
+        <block type="robot_display"></block>
+		<block type="robot_turn"></block>
+        <block type="robot_turnDegrees"></block>
+        <block type="robot_move"></block>
+        <block type="robot_rotate"></block>
+        <block type="set_robot"></block>
+        <block type="fork_movement"></block>
+    </category>
+
+    <category name="Sensor" colour="300">
+        <block type="sensor_temperature"></block>
+    </category>
+
+    <category name="Variables" colour="330" custom="VARIABLE"></category>
+
+</xml>

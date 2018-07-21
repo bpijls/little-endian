@@ -1,0 +1,13 @@
+{
+  "name": "CoderDojo-websocket",
+  "version": "1.0.0",
+  "description": "CoderDojo-websocket-server",
+  "author": "CoderDojo @ HVA",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^5.1.1"
+  }
+}

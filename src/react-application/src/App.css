@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:100,200,300,300i,400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+body {
+  font-family: 'HelveticaNeue-Light', sans-serif;
+  color: rgba(63,52,100,1);
+}
+
+.container-fluid {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  /* position: fixed; */
+  background-image: url(img/space-background.jpg) ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* background-position: center; */
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  /*justify-content: center;*/
+  /* align-items: center;
+  padding-left: 0; */
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+
+#sidebar-wrapper {
+  top: 2%;
+  z-index: 1000;
+  position: fixed;
+  left: 200px;
+  width: 50px;
+  height: 96%;
+  margin-left: -200px;
+  overflow-y: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#content-wrapper {
+  position: absolute;
+  height: 96%;
+  width: 100%;
+  padding-left: 55px;
+  margin-top: 2vh;
+  padding-right: 5px;
+  /* border: 1px solid black; */
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+   -ms-animation: fadein 1s; /* Internet Explorer */
+    -o-animation: fadein 1s; /* Opera < 12.1 */
+       animation: fadein 1s;
+}
+
+#sidebar-wrapper.toggled {
+  width: 200px;
+}
+
+#content-wrapper.toggled {
+  padding-left: 205px;
+}
+
+.content-container {
+  /* width: 50px; */
+  height: 100%;
+  padding: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0;
+  position: relative;
+  /* -webkit-transition: all 0,5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; */
+}
+
+.content-container__inner {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  top: 0;
+  /* padding: 10px; */
+  /* opacity: 0.9; */
+  position: relative;
+  background-color: #ffffff99;
+  /*background-color: rgba(27, 26, 26, 0.2);*/
+  border-radius: 10px;
+  -webkit-transition: all 0,5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.no-background {
+  background-color: rgba(0,0,0,0);
+}
+
+.col-sm-12 {
+  padding: 0;
+}
+.col-xs-12 {
+  padding: 0;
+}
+
+.no-padding {
+  padding: 0;
+}

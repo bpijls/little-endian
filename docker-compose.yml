@@ -1,0 +1,84 @@
+#Docker-compose for Coderdojo project @ HVA
+#add .env before running.
+
+version: '2.0'
+services:
+
+#Websocket container
+  websocket:
+    build:
+      context: ./src/socket-server/
+      dockerfile: Dockerfile_websocket
+    image: little-endian/socket-server:latest
+    volumes:
+     - ./src/socket-server/:/usr/src/app
+     - /usr/src/app/node_modules
+  
+    environment:
+     - VIRTUAL_HOST=${webSocketUrl}
+     - VIRTUAL_PORT=${webSocketPort}
+#     - LETSENCRYPT_HOST=${letsEncryptWebSocket}
+    networks:
+     - backend
+
+#Webapp container
+  webapp:
+    build:
+     context: ./src/react-application/
+     dockerfile: Dockerfile_webapp
+    image: little-endian/react-application:latest
+    volumes:
+     - ./src/react-application/:/usr/src/app
+     - /usr/src/app/node_modules
+    environment:
+     - VIRTUAL_HOST=${webAppUrl}
+     - VIRTUAL_PORT=${webAppPort}
+#     - LETSENCRYPT_HOST=${letsEncryptWebApp}
+    networks:
+     - backend
+
+#Proxy    
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - '80:80'
+#      - '443:443'
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - nginx-conf:/etc/nginx/conf.d
+      - nginx-vhost:/etc/nginx/vhost.d
+      - nginx-html:/usr/share/nginx/html
+      - nginx-gen-tmpl:/etc/docker-gen/templates/nginx.tmpl
+      - nginx-ssl:/etc/nginx/certs:ro
+    networks:
+      - backend
+
+#Letsencrypt container
+  letsencrypt-nginx-proxy:
+    container_name: letsencrypt-nginx-proxy
+    image: 'jrcs/letsencrypt-nginx-proxy-companion'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - nginx-conf:/etc/nginx/conf.d
+      - nginx-vhost:/etc/nginx/vhost.d
+      - nginx-html:/usr/share/nginx/html
+      - nginx-gen-tmpl:/etc/docker-gen/templates/nginx.tmpl
+      - nginx-ssl:/etc/nginx/certs:rw
+    networks:
+      - backend
+    environment:
+      - NGINX_PROXY_CONTAINER=nginx-proxy
+
+#Volumes
+volumes:
+   nginx-conf:
+   nginx-vhost:
+   nginx-html:
+   nginx-gen-tmpl:
+   nginx-ssl:
+
+#Backend network
+networks:
+  backend:
+    driver: bridge
